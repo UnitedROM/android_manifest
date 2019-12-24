@@ -8,6 +8,24 @@ To get started with the UnitedROM sources, you'll need to get
 familiar with [Git and Repo](https://source.android.com/setup/develop).
 
 
+Download the packages
+---------------------
+
+To build UnitedROM, you'll need a bunch of packages:
+
+```bash
+    bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev libtinfo-dev
+```
+
+You also need Java, we recommend to use OpenJDK package.
+
+For Ubuntu versions older than 16.04 (xenial), substitute:
+
+```bash
+    libwxgtk3.0-dev → libwxgtk2.8-dev
+```
+
+
 Create the Directories
 ----------------------
 
@@ -51,9 +69,18 @@ To Sync the source:
    repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 ```
 
+Turn on caching to speed up build
+---------------------------------
+
+Make use of ccache if you want to speed up subsequent builds by running:
+
+```bash
+    export USE_CCACHE=1 && ccache -M 50G
+```
+50G corresponds to 50GB of cache. This needs to be run once. Anywhere from 25GB-100GB will result in very noticeably increased build speeds (for instance, a typical 1hr build time can be reduced to 20min). If you’re only building for one device, 25GB-50GB is fine. If you plan to build for several devices that do not share the same kernel source, aim for 75GB-100GB. This space will be permanently occupied on your drive, so take this into consideration.
 
 Building the System
----------------
+-------------------
 
 Please note that if you are building on Mac OS X, you are required to install coreutils from MacPorts before you continue.
 Initialize the environment with the envsetup.sh script. Note that replacing "source" with a single dot saves a few characters, and the short form is more commonly used in documentation.
