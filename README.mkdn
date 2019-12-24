@@ -31,7 +31,7 @@ You may need to reboot for these changes to take effect.
 Now enter the following to initialize the repository:
 
 ```bash
-   cd ~/havoc
+   cd ~/united
 ```
 
 
