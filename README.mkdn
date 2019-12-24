@@ -48,7 +48,7 @@ To Sync the source:
 ----------------
 
 ```bash
-  repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+   repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 ```
 
 
@@ -60,7 +60,7 @@ Initialize the environment with the envsetup.sh script. Note that replacing "sou
 
 ```bash
    . build/envsetup.sh
-    brunch
+   brunch
 ```
 
 Enter the number of the build you want to start and press enter
