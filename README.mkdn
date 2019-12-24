@@ -17,7 +17,7 @@ To create them run:
 
 ```bash
    mkdir -p ~/bin
-   mkdir -p ~/havoc
+   mkdir -p ~/united
 ```
 
 Install the Repository
