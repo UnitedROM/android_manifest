@@ -7,6 +7,10 @@
   <remote  name="havoc"
            fetch="https://github.com/Havoc-OS"
            revision="ten" />
+  
+  <remote  name="united"
+           fetch="https://github.com/UnitedROM"
+           revision="ten" />
 
   <remote  name="havoc-devices"
            fetch="https://github.com/Havoc-Devices"
@@ -21,7 +25,7 @@
 
   <!-- Build -->
   <project path="build/blueprint" name="android_build_blueprint" remote="havoc" />
-  <project path="build/make" name="android_build" remote="havoc">
+  <project path="build/make" name="android_build" remote="united">
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -71,7 +75,7 @@
   <project path="packages/apps/Nfc" name="android_packages_apps_Nfc" remote="havoc" />
   <project path="packages/apps/OmniStyle" name="android_packages_apps_OmniStyle" remote="havoc" />
   <project path="packages/apps/PackageInstaller" name="android_packages_apps_PackageInstaller" remote="havoc" />
-  <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="havoc" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" remote="united" />
   <project path="packages/apps/Snap" name="android_packages_apps_Snap" remote="havoc" />
   <project path="packages/apps/ThemePicker" name="android_packages_apps_ThemePicker" remote="havoc" />
   <project path="packages/apps/WallpaperPicker2" name="android_packages_apps_WallpaperPicker2" remote="havoc" />
@@ -95,7 +99,7 @@
   <project path="system/vold" name="android_system_vold" remote="havoc" />
 
   <!-- Vendor -->
-  <project path="vendor/havoc" name="android_vendor_havoc" remote="havoc" />
+  <project path="vendor/united" name="android_vendor_united" remote="united" />
   <project path="vendor/qcom/opensource/power" name="android_vendor_qcom_opensource_power" remote="havoc" />
   <project path="vendor/support" name="android_vendor_support" remote="havoc" />
 
